@@ -62,6 +62,18 @@ class Directory implements Filesystem
         return $this->getWebsite() && $this->filesystem->exists($this->path($path));
     }
 
+
+    public function putFile($path, $file = null, $options = [])
+    {
+
+    }
+
+    public function putFileAs($path, $file, $name = null, $options = [])
+    {
+
+    }
+
+
     /**
      * @param Website $website
      * @return Directory
@@ -71,6 +83,7 @@ class Directory implements Filesystem
         $this->website = $website;
 
         return $this;
+
     }
 
     /**
@@ -78,9 +91,10 @@ class Directory implements Filesystem
      * @param bool $local
      * @return string
      */
-    public function path(string $path = null, $local = false): string
+    public function path($path): string
     {
         $prefix = "{$this->getWebsite()->uuid}/";
+        $local = false;
 
         if ($path === null) {
             $path = '';
