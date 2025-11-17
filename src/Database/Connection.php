@@ -133,7 +133,7 @@ class Connection
 
     /**
      * @param Hostname|Website $to
-     * @param null $connection
+     * @param $connection
      * @return bool
      * @throws ConnectionException
      */
@@ -223,7 +223,7 @@ class Connection
 
     /**
      * Purges the current tenant connection.
-     * @param null $connection
+     * @param $connection
      */
     public function purge($connection = null)
     {
@@ -241,10 +241,10 @@ class Connection
 
     /**
      * @param Hostname|Website $for
-     * @param string|null $path
+     * @param ?string $path
      * @return bool
      */
-    public function migrate($for, string $path = null): bool
+    public function migrate($for, ?string $path): bool
     {
         $website = $this->convertWebsiteOrHostnameToWebsite($for);
 
@@ -270,10 +270,10 @@ class Connection
 
     /**
      * @param Website|Hostname $for
-     * @param string $class
+     * @param ?string $class
      * @return bool
      */
-    public function seed($for, string $class = null): bool
+    public function seed($for, ?string $class): bool
     {
         $website = $this->convertWebsiteOrHostnameToWebsite($for);
 
