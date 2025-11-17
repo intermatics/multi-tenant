@@ -178,7 +178,7 @@ class Connection
         return true;
     }
 
-    public function configuration(string $connection = null): array
+    public function configuration(?string $connection): array
     {
         $connection = $connection ?? $this->tenantName();
 
