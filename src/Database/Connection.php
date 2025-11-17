@@ -121,10 +121,10 @@ class Connection
     /**
      * Checks whether a connection has been set up.
      *
-     * @param string|null $connection
+     * @param ?string $connection
      * @return bool
      */
-    public function exists(string $connection = null): bool
+    public function exists(?string $connection): bool
     {
         $connection = $connection ?? $this->tenantName();
 
